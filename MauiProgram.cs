@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using ShapeCalculator.ViewModels;
 
 namespace ShapeCalculator
 {
@@ -18,7 +19,9 @@ namespace ShapeCalculator
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
-
+            builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddSingleton<AppShell>();
+            builder.Services.AddSingleton<MainViewModel>();
             return builder.Build();
         }
     }

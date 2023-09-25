@@ -4,27 +4,25 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:ShapeCalculator"
-    Shell.FlyoutBehavior="Flyout"
-    Shell.BackgroundColor="Gray">
+    Shell.FlyoutBehavior="Disabled"
+    Shell.BackgroundColor="LightSeaGreen">
 
+    <Shell.BindingContext>
+    </Shell.BindingContext>
+    
+    <Shell.MenuBarItems>
+        <MenuBarItem Text="Shape Calculator">
+            <MenuFlyoutItem Text="Triangle"/>
+            <MenuFlyoutItem Text="Square"
+                            Command="{Binding SquareCommand}"/>
+            <MenuFlyoutItem Text="Rectangle"/>
+            <MenuFlyoutItem Text="Circle"/>
+        </MenuBarItem>
+    </Shell.MenuBarItems>
+    
     <ShellContent
-        Title="Triangle"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
-    <ShellContent
-        Title="Square"
-        ContentTemplate="{DataTemplate local:Square}"
-        Route="Square" />
-
-    <ShellContent
-        Title="Rectangle"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-
-    <ShellContent
-        Title="Circle"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
 
 </Shell>
