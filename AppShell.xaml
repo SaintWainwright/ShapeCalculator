@@ -5,18 +5,19 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:ShapeCalculator"
     Shell.FlyoutBehavior="Disabled"
-    Shell.BackgroundColor="LightSeaGreen">
+    Shell.BackgroundColor="LightSeaGreen"
+    xmlns:viewmodel="clr-namespace:ShapeCalculator.ViewModels">
 
-    <Shell.BindingContext>
-    </Shell.BindingContext>
-    
     <Shell.MenuBarItems>
         <MenuBarItem Text="Shape Calculator">
-            <MenuFlyoutItem Text="Triangle"/>
+            <MenuFlyoutItem Text="Triangle"
+                            Command="{Binding TriangleCommand}"/>
             <MenuFlyoutItem Text="Square"
                             Command="{Binding SquareCommand}"/>
-            <MenuFlyoutItem Text="Rectangle"/>
-            <MenuFlyoutItem Text="Circle"/>
+            <MenuFlyoutItem Text="Rectangle"
+                            Command="{Binding RectangleCommand}"/>
+            <MenuFlyoutItem Text="Circle"
+                            Command="{Binding CircleCommand}"/>
         </MenuBarItem>
     </Shell.MenuBarItems>
     
