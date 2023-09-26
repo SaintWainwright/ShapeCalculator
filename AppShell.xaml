@@ -8,6 +8,10 @@
     Shell.BackgroundColor="LightSeaGreen"
     xmlns:viewmodel="clr-namespace:ShapeCalculator.ViewModels">
 
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsEnabled="False" IsVisible="False"/>
+    </Shell.BackButtonBehavior>
+    
     <Shell.MenuBarItems>
         <MenuBarItem Text="Shape Calculator">
             <MenuFlyoutItem Text="Triangle"
