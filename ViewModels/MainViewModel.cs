@@ -15,23 +15,5 @@ namespace ShapeCalculator.ViewModels
         {
             Shell.Current.GoToAsync(nameof(Square));
         }
-
-        [RelayCommand]
-        void OnTriangle()
-        {
-            Shell.Current.GoToAsync(nameof(Triangle));
-        }
-
-        [RelayCommand]
-        void OnRectangle()
-        {
-            Shell.Current.GoToAsync(nameof(Rectangle));
-        }
-
-        [RelayCommand]
-        void OnCircle()
-        {
-            Shell.Current.GoToAsync(nameof(Circle));
-        }
     }
 }
