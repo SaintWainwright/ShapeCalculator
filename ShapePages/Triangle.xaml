@@ -6,6 +6,45 @@
         <BackButtonBehavior IsVisible="False" IsEnabled="False" />
     </Shell.BackButtonBehavior>
     <VerticalStackLayout>
-        <Entry />
+        <Label Text="Area"/>
+        <HorizontalStackLayout>
+            <VerticalStackLayout>
+                <HorizontalStackLayout>
+                    <Label Text="Edge 1"
+                           VerticalOptions="Center"/>
+                    <Border Stroke="Black" Margin="30,0,0,0">
+                        <Entry 
+                            x:Name="txtEntryEdge1"
+                            WidthRequest="150"/>
+                    </Border>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label Text="Edge 2"
+                           VerticalOptions="Center"/>
+                    <Border Stroke="Black" Margin="30,0,0,0">
+                        <Entry 
+                            x:Name="txtEntryEdge2"
+                            WidthRequest="150"/>
+                    </Border>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+            <VerticalStackLayout>
+                <Border>
+                    <Label Text="{Binding AreaTriangle}"/>
+                </Border>
+                <Button Text="Calculate"
+                    Clicked="Button_Clicked"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout VerticalOptions="Center" Margin="30,0">
+                <Picker Title="Measurement">
+                    <Picker.Items>
+                        <x:String>In</x:String>
+                        <x:String>m</x:String>
+                        <x:String>cm</x:String>
+                        <x:String>km</x:String>
+                    </Picker.Items>
+                </Picker>
+            </VerticalStackLayout>
+        </HorizontalStackLayout>
     </VerticalStackLayout>
 </ContentPage>
