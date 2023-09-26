@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ShapeCalculator.Triangle">
+             x:Class="ShapeCalculator.Triangle"
+             xmlns:viewmodel="clr-namespace:ShapeCalculator.ViewModels"
+             x:DataType="viewmodel:TriangleViewModel">
     <Shell.BackButtonBehavior>
         <BackButtonBehavior IsVisible="False" IsEnabled="False" />
     </Shell.BackButtonBehavior>
@@ -14,7 +16,7 @@
                            VerticalOptions="Center"/>
                     <Border Stroke="Black" Margin="30,0,0,0">
                         <Entry 
-                            x:Name="txtEntryEdge1"
+                            Text="{Binding AreaTriangleBase}"
                             WidthRequest="150"/>
                     </Border>
                 </HorizontalStackLayout>
@@ -23,7 +25,7 @@
                            VerticalOptions="Center"/>
                     <Border Stroke="Black" Margin="30,0,0,0">
                         <Entry 
-                            x:Name="txtEntryEdge2"
+                            Text="{Binding AreaTriangleHeight}"
                             WidthRequest="150"/>
                     </Border>
                 </HorizontalStackLayout>
@@ -33,7 +35,7 @@
                     <Label Text="{Binding AreaTriangle}"/>
                 </Border>
                 <Button Text="Calculate"
-                    Clicked="Button_Clicked"/>
+                        Command="{Binding CalculateAreaCommand}"/>
             </VerticalStackLayout>
             <VerticalStackLayout VerticalOptions="Center" Margin="30,0">
                 <Picker Title="Measurement">

@@ -26,8 +26,8 @@
     </Shell.MenuBarItems>
     
     <ShellContent
-        ContentTemplate="{DataTemplate local:Triangle}"
-        Route="Triangle" />
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
 
 
 </Shell>
