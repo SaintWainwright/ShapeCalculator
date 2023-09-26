@@ -6,9 +6,6 @@
         <BackButtonBehavior IsVisible="False" IsEnabled="False" />
     </Shell.BackButtonBehavior>
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to Triangle!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Entry />
     </VerticalStackLayout>
 </ContentPage>
