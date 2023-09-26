@@ -37,7 +37,7 @@
                 </Border>
                 <HorizontalStackLayout>
                     <Button Text="Calculate"
-                        Command="{Binding CalculateTriangleAreaCommand}"/>
+                        Command="{Binding CalculateAreaTriangleCommand}"/>
                     <Button Text="Clear"
                             Command="{Binding ClearTriangleAreaCommand}"/>
                 </HorizontalStackLayout>
