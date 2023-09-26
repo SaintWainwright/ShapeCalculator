@@ -30,12 +30,17 @@
                     </Border>
                 </HorizontalStackLayout>
             </VerticalStackLayout>
-            <VerticalStackLayout>
-                <Border>
-                    <Label Text="{Binding AreaTriangle}"/>
+            <VerticalStackLayout Margin="30,0,0,0">
+                <Border Margin="0,0,0,0">
+                    <Label Text="{Binding AreaTriangle}"
+                           HorizontalOptions="Center"/>
                 </Border>
-                <Button Text="Calculate"
-                        Command="{Binding CalculateAreaCommand}"/>
+                <HorizontalStackLayout>
+                    <Button Text="Calculate"
+                        Command="{Binding CalculateTriangleAreaCommand}"/>
+                    <Button Text="Clear"
+                            Command="{Binding ClearTriangleAreaCommand}"/>
+                </HorizontalStackLayout>
             </VerticalStackLayout>
             <VerticalStackLayout VerticalOptions="Center" Margin="30,0">
                 <Picker Title="Measurement">

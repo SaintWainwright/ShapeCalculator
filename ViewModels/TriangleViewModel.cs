@@ -20,9 +20,17 @@ namespace ShapeCalculator.ViewModels
         private decimal _AreaTriangleHeight = 0;
 
         [RelayCommand]
-        private void CalculateArea()
+        private void CalculateTriangleArea()
         {
             AreaTriangle = ((decimal)0.5 * AreaTriangleBase * AreaTriangleHeight);
+        }
+
+        [RelayCommand]
+        private void ClearTriangleArea()
+        {
+            AreaTriangle = 0;
+            AreaTriangleBase = 0;
+            AreaTriangleHeight = 0;
         }
     }
 }
