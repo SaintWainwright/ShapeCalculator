@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ShapeCalculator.ViewModels
 {
-    internal class RectangleViewModel : ObservableObject
+    public partial class RectangleViewModel : ObservableObject
     {
     }
 }

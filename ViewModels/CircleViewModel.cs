@@ -45,7 +45,6 @@ namespace ShapeCalculator.ViewModels
             }
         }
 
-
         //Binding Volume of the Circle(Sphere)
         private double _VolumeCircle = 0;
         public double VolumeCircle
@@ -67,6 +66,11 @@ namespace ShapeCalculator.ViewModels
         }
 
         public ICommand CalculateCircleCommand => new Command(CalculateCircle);
+        private void ClearCircle()
+        {
+            RadiusCircle = 0;
+        }
+        public ICommand ClearCircleCommand => new Command(ClearCircle);
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string propertyName = null)
