@@ -8,11 +8,16 @@
     <Shell.BackButtonBehavior>
         <BackButtonBehavior IsVisible="False" IsEnabled="False" />
     </Shell.BackButtonBehavior>
-    <VerticalStackLayout>
+    <VerticalStackLayout VerticalOptions="Center" WidthRequest="300">
         <Label 
             Text="Welcome to Circle!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         <Label Text="{Binding RadiusCircle}"/>
+        <Entry Text="{Binding RadiusCircle}"/>
+        <Label Text="{Binding AreaCircle}"
+               FontSize="30"/>
+        <Button 
+            Command="{Binding CalculateAreaCircleCommand}"/>
     </VerticalStackLayout>
 </ContentPage>
