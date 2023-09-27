@@ -7,10 +7,15 @@
     <Shell.BackButtonBehavior>
         <BackButtonBehavior IsVisible="False" IsEnabled="False" />
     </Shell.BackButtonBehavior>
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to Square!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+    <VerticalStackLayout HorizontalOptions="Center">
+        <Entry Text="{Binding SideSquare}"
+               WidthRequest="200"/>
+        <Label Text="{Binding AreaSquare}"/>
+        <Label Text="{Binding PerimeterSquare}"/>
+        <Label Text="{Binding VolumeSquare}"/>
+        <Button Text="Calculate"
+            Command="{Binding CalculateSquareCommand}"/>
+        <Button Text="Clear"
+            Command="{Binding ClearSquareCommand}"/>
     </VerticalStackLayout>
 </ContentPage>

@@ -7,10 +7,32 @@
     <Shell.BackButtonBehavior>
         <BackButtonBehavior IsVisible="False" IsEnabled="False" />
     </Shell.BackButtonBehavior>
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to Rectangle!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <HorizontalStackLayout>
+            <VerticalStackLayout>
+                <Entry Text="{Binding LengthRectangle}"/>
+                <Entry Text="{Binding WidthRectangle}"/>
+                <HorizontalStackLayout>
+                    <Button Text="Calculate"
+                            Command="{Binding CalculateRectangleCommand}"/>
+                    <Button Text="Clear"
+                            Command="{Binding ClearRectangleCommand}"/>
+                </HorizontalStackLayout>
+                <Label Text="{Binding AreaRectangle}"/>
+                <Label Text="{Binding PerimeterRectangle}"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout>
+                <Entry Text="{Binding LengthRectangleTank}"/>
+                <Entry Text="{Binding WidthRectangleTank}"/>
+                <Entry Text="{Binding HeightRectangleTank}"/>
+                <HorizontalStackLayout>
+                    <Button Text="Calculate"
+                            Command="{Binding CalculateRectangleTankCommand}"/>
+                    <Button Text="Clear"
+                            Command="{Binding ClearRectangleTankCommand}"/>
+                </HorizontalStackLayout>
+                <Label Text="{Binding VolumeRectangleTank}"/>
+            </VerticalStackLayout>
+        </HorizontalStackLayout>
     </VerticalStackLayout>
 </ContentPage>

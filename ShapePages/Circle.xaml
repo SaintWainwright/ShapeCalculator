@@ -20,8 +20,12 @@
                FontSize="30"/>
         <Label Text="{Binding VolumeCircle}"
                FontSize="30"/>
-        <Button 
-            Text="Calculate"
-            Command="{Binding CalculateCircleCommand}"/>
+        <HorizontalStackLayout>
+            <Button 
+                    Text="Calculate"
+                    Command="{Binding CalculateCircleCommand}"/>
+            <Button Text="Clear"
+                    Command="{Binding ClearCircleCommand}"/>
+        </HorizontalStackLayout>
     </VerticalStackLayout>
 </ContentPage>

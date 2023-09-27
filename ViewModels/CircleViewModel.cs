@@ -69,6 +69,7 @@ namespace ShapeCalculator.ViewModels
         private void ClearCircle()
         {
             RadiusCircle = 0;
+            CalculateCircle();
         }
         public ICommand ClearCircleCommand => new Command(ClearCircle);
 

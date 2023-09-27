@@ -75,7 +75,7 @@ namespace ShapeCalculator.ViewModels
         {
             SideSquare = 0;
         }
-        public ICommand ClearCircleCommand => new Command(ClearSquare);
+        public ICommand ClearSquareCommand => new Command(ClearSquare);
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string propertyName = null)

@@ -26,9 +26,9 @@ namespace ShapeCalculator.ViewModels
         [RelayCommand]
         private void ClearTriangleArea()
         {
-            AreaTriangle = 0;
             AreaTriangleBase = 0;
             AreaTriangleHeight = 0;
+            CalculateAreaTriangle();
         }
 
         //Perimeter of the Triangle
@@ -49,10 +49,10 @@ namespace ShapeCalculator.ViewModels
         [RelayCommand]
         private void ClearPerimeterTriangle()
         {
-            PerimeterTriangle = 0;
             PerimeterTriangleSide1 = 0;
             PerimeterTriangleBase = 0;
             PerimeterTriangleSide2 = 0;
+            CalculatePerimeterTriangle();
         }
 
         //Volume of the Triangle
@@ -71,9 +71,9 @@ namespace ShapeCalculator.ViewModels
         [RelayCommand]
         private void ClearVolumeTriangle()
         {
-            VolumeTriangle = 0;
             VolumeTriangleRadius = 0;
             VolumeTriangleHeight = 0;
+            CalculateVolumeTriangle();
         }
     }
 }
