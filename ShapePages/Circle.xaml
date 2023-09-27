@@ -13,11 +13,15 @@
             Text="Welcome to Circle!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-        <Label Text="{Binding RadiusCircle}"/>
         <Entry Text="{Binding RadiusCircle}"/>
         <Label Text="{Binding AreaCircle}"
                FontSize="30"/>
+        <Label Text="{Binding PerimeterCircle}"
+               FontSize="30"/>
+        <Label Text="{Binding VolumeCircle}"
+               FontSize="30"/>
         <Button 
-            Command="{Binding CalculateAreaCircleCommand}"/>
+            Text="Calculate"
+            Command="{Binding CalculateCircleCommand}"/>
     </VerticalStackLayout>
 </ContentPage>
