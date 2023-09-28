@@ -11,13 +11,13 @@
 
     <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
         <HorizontalStackLayout>
-            <Border HeightRequest="100" WidthRequest="150" VerticalOptions="Center">
+            <Border HeightRequest="100" WidthRequest="150" VerticalOptions="Center" HorizontalOptions="Center">
                 <Image Source="areatriangle.png" HorizontalOptions="Center" VerticalOptions="Center"/>
             </Border>
             <VerticalStackLayout VerticalOptions="Center" Margin="30,0,0,0">
-                <Label Text="Area"/>
+                <Label Text="Area" FontAttributes="Bold"/>
                 <HorizontalStackLayout>
-                    <Label Text="Edge 1"
+                    <Label Text="Base" Margin="0,0,12,0"
                            VerticalOptions="Center"/>
                     <Border Stroke="Black" Margin="30,0,0,0">
                         <Entry Text="{Binding AreaTriangleBase}"
@@ -25,7 +25,7 @@
                     </Border>
                 </HorizontalStackLayout>
                 <HorizontalStackLayout Margin="0,5,0,0">
-                    <Label Text="Edge 2"
+                    <Label Text="Height" Margin="0,0,1,0"
                            VerticalOptions="Center"/>
                     <Border Stroke="Black" Margin="30,0,0,0">
                         <Entry Text="{Binding AreaTriangleHeight}"
@@ -37,10 +37,10 @@
                 <Label Text="Result" Margin="0,0,0,10"/>
                 <HorizontalStackLayout>
                     <Border Stroke="Black">
-                        <Label Text="{Binding AreaTriangle}"
+                        <Entry Text="{Binding AreaTriangle}"
                                WidthRequest="100"
                                VerticalOptions="Center"
-                               Margin="30,0,0,0"/>
+                               IsReadOnly="True"/>
                     </Border>
                     <Picker SelectedIndex="1" MinimumWidthRequest="70">
                         <Picker.Items>
@@ -65,7 +65,7 @@
                 <Image Source="perimetertriangle.png" HorizontalOptions="Center"/>
             </Border>
             <VerticalStackLayout Margin="30,0,0,0">
-                <Label Text="Perimeter"/>
+                <Label Text="Perimeter" FontAttributes="Bold"/>
                 <HorizontalStackLayout>
                     <Label Text="Side 1" Margin="0,0,4,0"
                            VerticalOptions="Center"/>
@@ -95,10 +95,10 @@
                 <Label Text="Result" Margin="0,0,0,10"/>
                 <HorizontalStackLayout>
                     <Border Stroke="Black">
-                        <Label Text="{Binding PerimeterTriangle}"
+                        <Entry Text="{Binding PerimeterTriangle}"
                                WidthRequest="100"
                                VerticalOptions="Center"
-                               Margin="30,0,0,0"/>
+                               IsReadOnly="True"/>
                     </Border>
                     <Picker SelectedIndex="1" MinimumWidthRequest="70">
                         <Picker.Items>
@@ -123,7 +123,7 @@
                 <Image Source="volumetriangle.png" VerticalOptions="Center" HorizontalOptions="Center"/>
             </Border>
             <VerticalStackLayout Margin="30,0,0,0">
-                <Label Text="Volume - Cone"/>
+                <Label Text="Volume - Cone" FontAttributes="Bold"/>
                 <HorizontalStackLayout>
                     <Label Text="Radius" VerticalOptions="Center"/>
                     <Border Stroke="black" Margin="30,0,0,0">
@@ -143,10 +143,10 @@
                 <Label Text="Result" Margin="0,0,0,10"/>
                 <HorizontalStackLayout>
                     <Border Stroke="Black">
-                        <Label Text="{Binding VolumeTriangle}"
+                        <Entry Text="{Binding VolumeTriangle}"
                                WidthRequest="100"
                                VerticalOptions="Center"
-                               Margin="30,0,0,0"/>
+                               IsReadOnly="True"/>
                     </Border>
                     <Picker MinimumWidthRequest="70">
                         <Picker.Items>

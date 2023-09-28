@@ -1,6 +1,4 @@
-﻿using CommunityToolkit.Mvvm.Input;
-using ShapeCalculator.ViewModels;
-
+﻿
 namespace ShapeCalculator
 {
     public partial class AppShell : Shell
@@ -8,7 +6,6 @@ namespace ShapeCalculator
         public AppShell()
         {
             InitializeComponent();
-            BindingContext = new MainViewModel();
             
             Routing.RegisterRoute(nameof(Triangle), typeof(Triangle));
             Routing.RegisterRoute(nameof(Square), typeof(Square));

@@ -4,30 +4,30 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:ShapeCalculator"
-    Shell.FlyoutBehavior="Disabled"
-    Shell.BackgroundColor="LightSeaGreen"
-    xmlns:viewmodel="clr-namespace:ShapeCalculator.ViewModels">
+    Shell.FlyoutBehavior="Flyout"
+    Shell.BackgroundColor="LightSeaGreen">
 
     <Shell.BackButtonBehavior>
         <BackButtonBehavior IsEnabled="False" IsVisible="False"/>
     </Shell.BackButtonBehavior>
-    
-    <Shell.MenuBarItems>
-        <MenuBarItem Text="Shape Calculator">
-            <MenuFlyoutItem Text="Triangle"
-                            Command="{Binding TriangleCommand}"/>
-            <MenuFlyoutItem Text="Square"
-                            Command="{Binding SquareCommand}"/>
-            <MenuFlyoutItem Text="Rectangle"
-                            Command="{Binding RectangleCommand}"/>
-            <MenuFlyoutItem Text="Circle"
-                            Command="{Binding CircleCommand}"/>
-        </MenuBarItem>
-    </Shell.MenuBarItems>
-    
+
     <ShellContent
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Title="Triangle"
+        ContentTemplate="{DataTemplate local:Triangle}"
+        Route="Triangle" />
+    <ShellContent
+        Title="Square"
+        ContentTemplate="{DataTemplate local:Square}"
+        Route="Square" />
+    <ShellContent
+        Title="Rectangle"
+        ContentTemplate="{DataTemplate local:Rectangle}"
+        Route="Rectangle" />
+    <ShellContent
+        Title="Circle"
+        ContentTemplate="{DataTemplate local:Circle}"
+        Route="Circle" />
+    
 
 
 </Shell>
