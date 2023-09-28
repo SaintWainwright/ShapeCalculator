@@ -33,16 +33,10 @@
                     </Border>
                 </HorizontalStackLayout>
             </VerticalStackLayout>
-            <VerticalStackLayout Margin="30,0,0,0" VerticalOptions="Center">
-                <Label Text="Result" Margin="0,0,0,10"/>
-                <HorizontalStackLayout>
-                    <Border Stroke="Black">
-                        <Entry Text="{Binding AreaTriangle}"
-                               WidthRequest="100"
-                               VerticalOptions="Center"
-                               IsReadOnly="True"/>
-                    </Border>
-                    <Picker SelectedIndex="1" MinimumWidthRequest="70">
+            <VerticalStackLayout VerticalOptions="Center" Margin="30,0,0,0" WidthRequest="140">
+                <Label Text="Unit of Measurement"/>
+                <Border>
+                    <Picker WidthRequest="140">
                         <Picker.Items>
                             <x:String>in</x:String>
                             <x:String>m</x:String>
@@ -50,7 +44,15 @@
                             <x:String>km</x:String>
                         </Picker.Items>
                     </Picker>
-                </HorizontalStackLayout>
+                </Border>
+            </VerticalStackLayout>
+            <VerticalStackLayout Margin="30,0,0,0" VerticalOptions="Center">
+                <Label Text="Result" Margin="0,0,0,10"/>
+                <Border Stroke="Black">
+                    <Entry Text="{Binding AreaTriangle}"
+                           VerticalOptions="Center"
+                           IsReadOnly="True"/>
+                </Border>
                 <HorizontalStackLayout>
                     <Button Text="Calculate"
                             Command="{Binding CalculateAreaTriangleCommand}"
@@ -91,16 +93,10 @@
                     </Border>
                 </HorizontalStackLayout>
             </VerticalStackLayout>
-            <VerticalStackLayout Margin="30,0,0,0" VerticalOptions="Center">
-                <Label Text="Result" Margin="0,0,0,10"/>
-                <HorizontalStackLayout>
-                    <Border Stroke="Black">
-                        <Entry Text="{Binding PerimeterTriangle}"
-                               WidthRequest="100"
-                               VerticalOptions="Center"
-                               IsReadOnly="True"/>
-                    </Border>
-                    <Picker SelectedIndex="1" MinimumWidthRequest="70">
+            <VerticalStackLayout VerticalOptions="Center" Margin="30,0,0,0" WidthRequest="140">
+                <Label Text="Unit of Measurement"/>
+                <Border>
+                    <Picker WidthRequest="140">
                         <Picker.Items>
                             <x:String>in</x:String>
                             <x:String>m</x:String>
@@ -108,7 +104,15 @@
                             <x:String>km</x:String>
                         </Picker.Items>
                     </Picker>
-                </HorizontalStackLayout>
+                </Border>
+            </VerticalStackLayout>
+            <VerticalStackLayout Margin="30,0,0,0" VerticalOptions="Center">
+                <Label Text="Result" Margin="0,0,0,10"/>
+                <Border Stroke="Black">
+                    <Entry Text="{Binding PerimeterTriangle}"
+                           VerticalOptions="Center"
+                           IsReadOnly="True"/>
+                </Border>
                 <HorizontalStackLayout>
                     <Button Text="Calculate"
                             Command="{Binding CalculatePerimeterTriangleCommand}"
@@ -139,16 +143,10 @@
                     </Border>
                 </HorizontalStackLayout>
             </VerticalStackLayout>
-            <VerticalStackLayout Margin="30,0,0,0" VerticalOptions="Center">
-                <Label Text="Result" Margin="0,0,0,10"/>
-                <HorizontalStackLayout>
-                    <Border Stroke="Black">
-                        <Entry Text="{Binding VolumeTriangle}"
-                               WidthRequest="100"
-                               VerticalOptions="Center"
-                               IsReadOnly="True"/>
-                    </Border>
-                    <Picker MinimumWidthRequest="70">
+            <VerticalStackLayout VerticalOptions="Center" Margin="30,0,0,0" WidthRequest="140">
+                <Label Text="Unit of Measurement"/>
+                <Border>
+                    <Picker WidthRequest="140">
                         <Picker.Items>
                             <x:String>in</x:String>
                             <x:String>m</x:String>
@@ -156,7 +154,15 @@
                             <x:String>km</x:String>
                         </Picker.Items>
                     </Picker>
-                </HorizontalStackLayout>
+                </Border>
+            </VerticalStackLayout>
+            <VerticalStackLayout Margin="30,0,0,0" VerticalOptions="Center">
+                <Label Text="Result" Margin="0,0,0,10"/>
+                <Border Stroke="Black">
+                    <Entry Text="{Binding VolumeTriangle}"
+                           VerticalOptions="Center"
+                           IsReadOnly="True"/>
+                </Border>
                 <HorizontalStackLayout>
                     <Button Text="Calculate"
                             Command="{Binding CalculateVolumeTriangleCommand}"
