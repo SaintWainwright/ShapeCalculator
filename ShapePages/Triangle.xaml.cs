@@ -1,4 +1,3 @@
-
 using ShapeCalculator.ViewModels;
 
 namespace ShapeCalculator;

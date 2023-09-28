@@ -17,37 +17,27 @@
             <VerticalStackLayout VerticalOptions="Center" Margin="30,0,0,0">
                 <Label Text="Area" FontAttributes="Bold"/>
                 <HorizontalStackLayout>
-                    <Label Text="Base" Margin="0,0,12,0"
+                    <Label Text="Base" WidthRequest="100"
                            VerticalOptions="Center"/>
-                    <Border Stroke="Black" Margin="30,0,0,0">
+                    <Border Stroke="Black">
                         <Entry Text="{Binding AreaTriangleBase}"
                                WidthRequest="150"/>
                     </Border>
                 </HorizontalStackLayout>
                 <HorizontalStackLayout Margin="0,5,0,0">
-                    <Label Text="Height" Margin="0,0,1,0"
+                    <Label Text="Height" WidthRequest="100"
                            VerticalOptions="Center"/>
-                    <Border Stroke="Black" Margin="30,0,0,0">
+                    <Border Stroke="Black">
                         <Entry Text="{Binding AreaTriangleHeight}"
                                WidthRequest="150"/>
                     </Border>
                 </HorizontalStackLayout>
             </VerticalStackLayout>
             <VerticalStackLayout VerticalOptions="Center" Margin="30,0,0,0" WidthRequest="140">
-                <Label Text="Unit of Measurement"/>
-                <Border>
-                    <Picker WidthRequest="140">
-                        <Picker.Items>
-                            <x:String>in</x:String>
-                            <x:String>m</x:String>
-                            <x:String>cm</x:String>
-                            <x:String>km</x:String>
-                        </Picker.Items>
-                    </Picker>
-                </Border>
+                <Picker Title="Unit of Measurement" WidthRequest="140" ItemsSource="{Binding UnitsOfMeasurements}" SelectedItem="{Binding UnitMeasurementArea}"/>
             </VerticalStackLayout>
             <VerticalStackLayout Margin="30,0,0,0" VerticalOptions="Center">
-                <Label Text="Result" Margin="0,0,0,10"/>
+                <Label Text="Result" Margin="0,0,0,5"/>
                 <Border Stroke="Black">
                     <Entry Text="{Binding AreaTriangle}"
                            VerticalOptions="Center"
@@ -69,42 +59,32 @@
             <VerticalStackLayout Margin="30,0,0,0">
                 <Label Text="Perimeter" FontAttributes="Bold"/>
                 <HorizontalStackLayout>
-                    <Label Text="Side 1" Margin="0,0,4,0"
+                    <Label Text="Side 1" WidthRequest="100"
                            VerticalOptions="Center"/>
-                    <Border Margin="30,0,0,0" Stroke="black ">
+                    <Border Stroke="black ">
                         <Entry Text="{Binding PerimeterTriangleSide1}"
                                WidthRequest="150"/>
                     </Border>
                 </HorizontalStackLayout>
                 <HorizontalStackLayout Margin="0,5,0,0">
-                    <Label Text="Side 2" Margin="0,0,4,0"
+                    <Label Text="Side 2" WidthRequest="100"
                            VerticalOptions="Center"/>
-                    <Border Margin="30,0,0,0" Stroke="black ">
+                    <Border Stroke="black ">
                         <Entry Text="{Binding PerimeterTriangleBase}"
                                WidthRequest="150"/>
                     </Border>
                 </HorizontalStackLayout>
                 <HorizontalStackLayout Margin="0,5,0,0">
-                    <Label Text="Side 3" Margin="0,0,4,0"
+                    <Label Text="Side 3" WidthRequest="100"
                            VerticalOptions="Center"/>
-                    <Border Margin="30,0,0,0" Stroke="black ">
+                    <Border Stroke="black ">
                         <Entry Text="{Binding PerimeterTriangleSide2}"
                                WidthRequest="150"/>
                     </Border>
                 </HorizontalStackLayout>
             </VerticalStackLayout>
             <VerticalStackLayout VerticalOptions="Center" Margin="30,0,0,0" WidthRequest="140">
-                <Label Text="Unit of Measurement"/>
-                <Border>
-                    <Picker WidthRequest="140">
-                        <Picker.Items>
-                            <x:String>in</x:String>
-                            <x:String>m</x:String>
-                            <x:String>cm</x:String>
-                            <x:String>km</x:String>
-                        </Picker.Items>
-                    </Picker>
-                </Border>
+                <Picker Title="Unit of Measurement" WidthRequest="140" ItemsSource="{Binding UnitsOfMeasurements}" SelectedItem="{Binding UnitMeasurementPerimeter}"/>
             </VerticalStackLayout>
             <VerticalStackLayout Margin="30,0,0,0" VerticalOptions="Center">
                 <Label Text="Result" Margin="0,0,0,10"/>
@@ -129,32 +109,22 @@
             <VerticalStackLayout Margin="30,0,0,0">
                 <Label Text="Volume - Cone" FontAttributes="Bold"/>
                 <HorizontalStackLayout>
-                    <Label Text="Radius" VerticalOptions="Center"/>
-                    <Border Stroke="black" Margin="30,0,0,0">
+                    <Label Text="Radius" WidthRequest="100" VerticalOptions="Center"/>
+                    <Border Stroke="black">
                         <Entry Text="{Binding VolumeTriangleRadius}"
                                WidthRequest="150"/>
                     </Border>
                 </HorizontalStackLayout>
                 <HorizontalStackLayout Margin="0,5,0,0">
-                    <Label Text="Height" VerticalOptions="Center" Margin="0,0,1,0"/>
-                    <Border Stroke="black" Margin="30,0,0,0">
+                    <Label Text="Height" VerticalOptions="Center" WidthRequest="100"/>
+                    <Border Stroke="black">
                         <Entry Text="{Binding VolumeTriangleHeight}"
                                WidthRequest="150"/>
                     </Border>
                 </HorizontalStackLayout>
             </VerticalStackLayout>
-            <VerticalStackLayout VerticalOptions="Center" Margin="30,0,0,0" WidthRequest="140">
-                <Label Text="Unit of Measurement"/>
-                <Border>
-                    <Picker WidthRequest="140">
-                        <Picker.Items>
-                            <x:String>in</x:String>
-                            <x:String>m</x:String>
-                            <x:String>cm</x:String>
-                            <x:String>km</x:String>
-                        </Picker.Items>
-                    </Picker>
-                </Border>
+            <VerticalStackLayout VerticalOptions="Center" Margin="30,0,0,0">
+                <Picker Title="Unit of Measurement" WidthRequest="140" ItemsSource="{Binding UnitsOfMeasurements}" SelectedItem="{Binding UnitMeasurementVolume}"/>
             </VerticalStackLayout>
             <VerticalStackLayout Margin="30,0,0,0" VerticalOptions="Center">
                 <Label Text="Result" Margin="0,0,0,10"/>

@@ -8,10 +8,11 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using ShapeCalculator.ViewModels;
 
 namespace ShapeCalculator.ViewModels
 {
-    public partial class RectangleViewModel : INotifyPropertyChanged
+    public partial class RectangleViewModel : MainViewModel
     {
         private double _LengthRectangle = 0;
         public double LengthRectangle
@@ -35,8 +36,8 @@ namespace ShapeCalculator.ViewModels
                 OnPropertyChanged(nameof(_WidthRectangle));
             }
         }
-        private double _AreaRectangle = 0;
-        public double AreaRectangle
+        private string _AreaRectangle = "0";
+        public string AreaRectangle
         {
             get { return _AreaRectangle; }
             set
@@ -46,8 +47,8 @@ namespace ShapeCalculator.ViewModels
                 OnPropertyChanged(nameof(_AreaRectangle));
             }
         }
-        private double _PerimeterRectangle = 0;
-        public double PerimeterRectangle
+        private string _PerimeterRectangle = "0";
+        public string PerimeterRectangle
         {
             get { return _PerimeterRectangle; }
             set
@@ -57,10 +58,23 @@ namespace ShapeCalculator.ViewModels
                 OnPropertyChanged(nameof(_PerimeterRectangle));
             }
         }
+
+        private string _UnitMeasurement = String.Empty;
+        public string UnitMeasurement
+        {
+            get { return _UnitMeasurement; }
+            set
+            {
+                _UnitMeasurement = value;
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(_UnitMeasurement));
+            }
+        }
+
         private void CalculateRectangle()
         {
-            AreaRectangle = Math.Round((WidthRectangle * LengthRectangle), 2);
-            PerimeterRectangle = Math.Round((2 * (WidthRectangle + LengthRectangle)), 2);
+            AreaRectangle = Math.Round((WidthRectangle * LengthRectangle), 2).ToString() + " " + UnitMeasurement;
+            PerimeterRectangle = ((2 * WidthRectangle) + (2 * LengthRectangle)).ToString() + " " + UnitMeasurement;
         }
         public ICommand CalculateRectangleCommand => new Command(CalculateRectangle);
 
@@ -69,6 +83,7 @@ namespace ShapeCalculator.ViewModels
         {
             LengthRectangle = 0;
             WidthRectangle = 0;
+            UnitMeasurement = string.Empty;
             CalculateRectangle();
         }
         public ICommand ClearRectangleCommand => new Command(ClearRectangle);
@@ -110,8 +125,8 @@ namespace ShapeCalculator.ViewModels
             }
         }
 
-        private double _VolumeRectangleTank = 0;
-        public double VolumeRectangleTank
+        private string _VolumeRectangleTank = "0";
+        public string VolumeRectangleTank
         {
             get { return _VolumeRectangleTank; }
             set
@@ -122,9 +137,21 @@ namespace ShapeCalculator.ViewModels
             }
         }
 
+        private string _UnitMeasurementVolume = String.Empty;
+        public string UnitMeasurementVolume
+        {
+            get { return _UnitMeasurementVolume; }
+            set
+            {
+                _UnitMeasurementVolume = value;
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(_UnitMeasurementVolume));
+            }
+        }
+
         private void CalculateRectangleTank()
         {
-            VolumeRectangleTank = Math.Round((LengthRectangleTank * WidthRectangleTank * HeightRectangleTank), 2);
+            VolumeRectangleTank = Math.Round((LengthRectangleTank * WidthRectangleTank * HeightRectangleTank), 2).ToString() + " " + UnitMeasurementVolume;
         }
 
         public ICommand CalculateRectangleTankCommand => new Command(CalculateRectangleTank);
@@ -133,14 +160,9 @@ namespace ShapeCalculator.ViewModels
             LengthRectangleTank = 0;
             WidthRectangleTank = 0;
             HeightRectangleTank = 0;
+            UnitMeasurementVolume = string.Empty;
             CalculateRectangleTank();
         }
         public ICommand ClearRectangleTankCommand => new Command(ClearRectangleTank);
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
     }
 }

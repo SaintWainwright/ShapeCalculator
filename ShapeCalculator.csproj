@@ -57,8 +57,17 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\areacircle.png" />
+	  <None Remove="Resources\Images\arearectangle.png" />
+	  <None Remove="Resources\Images\areasquare.png" />
 	  <None Remove="Resources\Images\areatriangle.png" />
+	  <None Remove="Resources\Images\perimetercircle.png" />
+	  <None Remove="Resources\Images\perimeterrectangle.png" />
+	  <None Remove="Resources\Images\perimetersquare.jpg" />
 	  <None Remove="Resources\Images\perimetertriangle.png" />
+	  <None Remove="Resources\Images\volumecircle.png" />
+	  <None Remove="Resources\Images\volumerectangle.png" />
+	  <None Remove="Resources\Images\volumesquare.jpg" />
 	  <None Remove="Resources\Images\volumetriangle.png" />
 	</ItemGroup>
 

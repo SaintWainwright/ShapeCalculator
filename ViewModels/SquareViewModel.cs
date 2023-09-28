@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace ShapeCalculator.ViewModels
 {
-    public partial class SquareViewModel : INotifyPropertyChanged
+    public partial class SquareViewModel : MainViewModel
     {
         //Set up for binding of Side of Square
         private double _SideSquare = 0;
@@ -25,8 +25,8 @@ namespace ShapeCalculator.ViewModels
         }
 
         //Binding of Area of Square
-        private double _AreaSquare = 0;
-        public double AreaSquare
+        private string _AreaSquare = "0";
+        public string AreaSquare
         {
             get { return _AreaSquare; }
             set
@@ -38,8 +38,8 @@ namespace ShapeCalculator.ViewModels
         }
 
         //Binding the Perimeter of the Square
-        private double _PerimeterSquare = 0;
-        public double PerimeterSquare
+        private string _PerimeterSquare = "0";
+        public string PerimeterSquare
         {
             get { return _PerimeterSquare; }
             set
@@ -51,8 +51,8 @@ namespace ShapeCalculator.ViewModels
         }
 
         //Binding Volume of the Square(Cube)
-        private double _VolumeSquare = 0;
-        public double VolumeSquare
+        private string _VolumeSquare = "0";
+        public string VolumeSquare
         {
             get { return _VolumeSquare; }
             set
@@ -63,24 +63,32 @@ namespace ShapeCalculator.ViewModels
             }
         }
 
+        private string _UnitMeasurement = String.Empty;
+        public string UnitMeasurement
+        {
+            get { return _UnitMeasurement; }
+            set
+            {
+                _UnitMeasurement = value;
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(_UnitMeasurement));
+            }
+        }
+
         private void CalculateSquare()
         {
-            AreaSquare = Math.Round(Math.Pow(SideSquare, 2), 2);
-            PerimeterSquare = Math.Round((4 * SideSquare), 2);
-            VolumeSquare = Math.Round(Math.Pow(SideSquare, 3), 2);
+            AreaSquare = Math.Round(Math.Pow(SideSquare, 2), 2).ToString() + " " + UnitMeasurement;
+            PerimeterSquare = Math.Round((4 * SideSquare), 2).ToString() + " " + UnitMeasurement;
+            VolumeSquare = Math.Round(Math.Pow(SideSquare, 3), 2).ToString() + " " + UnitMeasurement;
         }
 
         public ICommand CalculateSquareCommand => new Command(CalculateSquare);
         private void ClearSquare()
         {
             SideSquare = 0;
+            UnitMeasurement = String.Empty;
+            CalculateSquare();
         }
         public ICommand ClearSquareCommand => new Command(ClearSquare);
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
     }
 }

@@ -4,8 +4,20 @@ using System.Windows.Input;
 
 namespace ShapeCalculator.ViewModels
 {
-    public partial class CircleViewModel : INotifyPropertyChanged
+    public partial class CircleViewModel : MainViewModel
     {
+        private string _UnitMeasurement = String.Empty;
+        public string UnitMeasurement
+        {
+            get { return _UnitMeasurement; }
+            set
+            {
+                _UnitMeasurement = value;
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(_UnitMeasurement));
+            }
+        }
+
         //Set up for binding of Radius of Circle
         private double _RadiusCircle = 0;
         public double RadiusCircle
@@ -20,8 +32,8 @@ namespace ShapeCalculator.ViewModels
         }
 
         //Binding of Area of Circle
-        private double _AreaCircle = 0;
-        public double AreaCircle
+        private string _AreaCircle = "0";
+        public string AreaCircle
         {
             get { return _AreaCircle; }
             set 
@@ -33,8 +45,8 @@ namespace ShapeCalculator.ViewModels
         }
 
         //Binding the Perimeter of the Circle
-        private double _PerimeterCircle = 0;
-        public double PerimeterCircle
+        private string _PerimeterCircle = "0";
+        public string PerimeterCircle
         {
             get { return _PerimeterCircle; }
             set 
@@ -46,8 +58,8 @@ namespace ShapeCalculator.ViewModels
         }
 
         //Binding Volume of the Circle(Sphere)
-        private double _VolumeCircle = 0;
-        public double VolumeCircle
+        private string _VolumeCircle = "0";
+        public string VolumeCircle
         {
             get { return _VolumeCircle; }
             set
@@ -60,23 +72,18 @@ namespace ShapeCalculator.ViewModels
 
         private void CalculateCircle()
         {
-            AreaCircle = Math.Round((Math.PI * Math.Pow(RadiusCircle, 2)), 2);
-            PerimeterCircle = Math.Round((2 * Math.PI * RadiusCircle), 2);
-            VolumeCircle = Math.Round(((4.0/3) * (Math.PI * Math.Pow(RadiusCircle, 3))), 2);
+            AreaCircle = Math.Round((Math.PI * Math.Pow(RadiusCircle, 2)), 2).ToString() + " " + UnitMeasurement;
+            PerimeterCircle = Math.Round((2 * Math.PI * RadiusCircle), 2).ToString() + " " + UnitMeasurement;
+            VolumeCircle = Math.Round(((4.0/3) * (Math.PI * Math.Pow(RadiusCircle, 3))), 2).ToString() + " " + UnitMeasurement;
         }
 
         public ICommand CalculateCircleCommand => new Command(CalculateCircle);
         private void ClearCircle()
         {
             RadiusCircle = 0;
+            UnitMeasurement = string.Empty;
             CalculateCircle();
         }
         public ICommand ClearCircleCommand => new Command(ClearCircle);
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
     }
 }

@@ -7,15 +7,54 @@
     <Shell.BackButtonBehavior>
         <BackButtonBehavior IsVisible="False" IsEnabled="False" />
     </Shell.BackButtonBehavior>
-    <VerticalStackLayout HorizontalOptions="Center">
-        <Entry Text="{Binding SideSquare}"
-               WidthRequest="200"/>
-        <Label Text="{Binding AreaSquare}"/>
-        <Label Text="{Binding PerimeterSquare}"/>
-        <Label Text="{Binding VolumeSquare}"/>
-        <Button Text="Calculate"
-            Command="{Binding CalculateSquareCommand}"/>
-        <Button Text="Clear"
-            Command="{Binding ClearSquareCommand}"/>
-    </VerticalStackLayout>
+    
+    <HorizontalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+        <VerticalStackLayout>
+            <Border WidthRequest="150" HeightRequest="100" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,0,30,0">
+                <Image Source="areasquare.png" />
+            </Border>
+            <Border WidthRequest="150" HeightRequest="100" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,50,30,50">
+                <Image Source="perimetersquare.jpg" />
+            </Border>
+            <Border WidthRequest="150" HeightRequest="100" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,0,30,0">
+                <Image Source="volumesquare.jpg" />
+            </Border>
+        </VerticalStackLayout>
+        <VerticalStackLayout>
+            <HorizontalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Margin="0,10,0,0">
+                        <Label Text="Side" WidthRequest="100" VerticalOptions="Center"/>
+                        <Border Stroke="Black">
+                            <Entry Text="{Binding SideSquare}" WidthRequest="150"/>
+                        </Border>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+                <Picker Title="Unit of Measurement" VerticalOptions="Center" ItemsSource="{Binding UnitsOfMeasurements}" Margin="30,0,0,0" SelectedItem="{Binding UnitMeasurement}"/>
+                <Button Text="Calculate" BackgroundColor="Blue" Command="{Binding CalculateSquareCommand}" HeightRequest="10" Margin="30,0,0,0"/>
+                <Button Text="Clear" Command="{Binding ClearSquareCommand}" HeightRequest="10"/>
+            </HorizontalStackLayout>
+            <VerticalStackLayout Margin="0,60,0,0">
+                <Label Text="Result" FontAttributes="Bold"/>
+                <HorizontalStackLayout>
+                    <Label Text="Area" WidthRequest="100" VerticalOptions="Center"/>
+                    <Border Stroke="black">
+                        <Entry Text="{Binding AreaSquare}" WidthRequest="150" IsReadOnly="True"/>
+                    </Border>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Margin="0,5,0,0">
+                    <Label Text="Perimeter" WidthRequest="100" VerticalOptions="Center"/>
+                    <Border Stroke="black">
+                        <Entry Text="{Binding PerimeterSquare}" WidthRequest="150" IsReadOnly="True"/>
+                    </Border>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Margin="0,5,0,0">
+                    <Label Text="Volume - Cube" WidthRequest="100" VerticalOptions="Center"/>
+                    <Border Stroke="black">
+                        <Entry Text="{Binding VolumeSquare}" WidthRequest="150" IsReadOnly="True"/>
+                    </Border>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </HorizontalStackLayout>
 </ContentPage>

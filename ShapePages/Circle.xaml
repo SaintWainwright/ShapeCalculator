@@ -8,24 +8,54 @@
     <Shell.BackButtonBehavior>
         <BackButtonBehavior IsVisible="False" IsEnabled="False" />
     </Shell.BackButtonBehavior>
-    <VerticalStackLayout VerticalOptions="Center" WidthRequest="300">
-        <Label 
-            Text="Welcome to Circle!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Entry Text="{Binding RadiusCircle}"/>
-        <Label Text="{Binding AreaCircle}"
-               FontSize="30"/>
-        <Label Text="{Binding PerimeterCircle}"
-               FontSize="30"/>
-        <Label Text="{Binding VolumeCircle}"
-               FontSize="30"/>
-        <HorizontalStackLayout>
-            <Button 
-                    Text="Calculate"
-                    Command="{Binding CalculateCircleCommand}"/>
-            <Button Text="Clear"
-                    Command="{Binding ClearCircleCommand}"/>
-        </HorizontalStackLayout>
-    </VerticalStackLayout>
+    
+    <HorizontalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+        <VerticalStackLayout>
+            <Border WidthRequest="150" HeightRequest="100" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,0,30,0">
+                <Image Source="areacircle.png" />
+            </Border>
+            <Border WidthRequest="150" HeightRequest="100" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,50,30,50">
+                <Image Source="perimetercircle.png" />
+            </Border>
+            <Border WidthRequest="150" HeightRequest="100" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,0,30,0">
+                <Image Source="volumecircle.png" />
+            </Border>
+        </VerticalStackLayout>
+        <VerticalStackLayout>
+            <HorizontalStackLayout>
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Margin="0,10,0,0">
+                        <Label Text="Radius (r)" WidthRequest="100" VerticalOptions="Center"/>
+                        <Border Stroke="Black">
+                            <Entry Text="{Binding RadiusCircle}" WidthRequest="150"/>
+                        </Border>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+                <Picker Title="Unit of Measurement" VerticalOptions="Center" ItemsSource="{Binding UnitsOfMeasurements}" Margin="30,0,0,0" SelectedItem="{Binding UnitMeasurement}"/>
+                <Button Text="Calculate" BackgroundColor="Blue" Command="{Binding CalculateCircleCommand}" HeightRequest="10" Margin="30,0,0,0"/>
+                <Button Text="Clear" Command="{Binding ClearCircleCommand}" HeightRequest="10"/>
+            </HorizontalStackLayout>
+            <VerticalStackLayout Margin="0,60,0,0">
+                <Label Text="Result" FontAttributes="Bold"/>
+                <HorizontalStackLayout>
+                    <Label Text="Area" WidthRequest="100" VerticalOptions="Center"/>
+                    <Border Stroke="black">
+                        <Entry Text="{Binding AreaCircle}" WidthRequest="150" IsReadOnly="True"/>
+                    </Border>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Margin="0,5,0,0">
+                    <Label Text="Perimeter" WidthRequest="100" VerticalOptions="Center"/>
+                    <Border Stroke="black">
+                        <Entry Text="{Binding PerimeterCircle}" WidthRequest="150" IsReadOnly="True"/>
+                    </Border>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Margin="0,5,0,0">
+                    <Label Text="Volume - Cube" WidthRequest="100" VerticalOptions="Center"/>
+                    <Border Stroke="black">
+                        <Entry Text="{Binding VolumeCircle}" WidthRequest="150" IsReadOnly="True"/>
+                    </Border>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </HorizontalStackLayout>
 </ContentPage>
