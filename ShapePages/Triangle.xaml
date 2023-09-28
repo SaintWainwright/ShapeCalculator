@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShapeCalculator.Triangle"
              xmlns:viewmodel="clr-namespace:ShapeCalculator.ViewModels"
-             x:DataType="viewmodel:TriangleViewModel">
+             x:DataType="viewmodel:TriangleViewModel"
+             Title="Triangle">
     <Shell.BackButtonBehavior>
         <BackButtonBehavior IsVisible="False" IsEnabled="False" />
     </Shell.BackButtonBehavior>
@@ -41,7 +42,7 @@
                                VerticalOptions="Center"
                                Margin="30,0,0,0"/>
                     </Border>
-                    <Picker SelectedIndex="1" MinimumHeightRequest="3">
+                    <Picker SelectedIndex="1" MinimumWidthRequest="70">
                         <Picker.Items>
                             <x:String>in</x:String>
                             <x:String>m</x:String>
@@ -99,7 +100,7 @@
                                VerticalOptions="Center"
                                Margin="30,0,0,0"/>
                     </Border>
-                    <Picker SelectedIndex="1" MinimumHeightRequest="3">
+                    <Picker SelectedIndex="1" MinimumWidthRequest="70">
                         <Picker.Items>
                             <x:String>in</x:String>
                             <x:String>m</x:String>
@@ -117,9 +118,12 @@
                 </HorizontalStackLayout>
             </VerticalStackLayout>
         </HorizontalStackLayout>
-        <Label Text="Volume - Cone"/>
         <HorizontalStackLayout>
-            <VerticalStackLayout>
+            <Border WidthRequest="150" HeightRequest="100" VerticalOptions="Center" HorizontalOptions="Center">
+                <Image Source="volumetriangle.png" VerticalOptions="Center" HorizontalOptions="Center"/>
+            </Border>
+            <VerticalStackLayout Margin="30,0,0,0">
+                <Label Text="Volume - Cone"/>
                 <HorizontalStackLayout>
                     <Label Text="Radius" VerticalOptions="Center"/>
                     <Border Stroke="black" Margin="30,0,0,0">
@@ -144,7 +148,7 @@
                                VerticalOptions="Center"
                                Margin="30,0,0,0"/>
                     </Border>
-                    <Picker SelectedIndex="1" MinimumHeightRequest="3">
+                    <Picker MinimumWidthRequest="70">
                         <Picker.Items>
                             <x:String>in</x:String>
                             <x:String>m</x:String>

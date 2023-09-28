@@ -59,6 +59,7 @@
 	<ItemGroup>
 	  <None Remove="Resources\Images\areatriangle.png" />
 	  <None Remove="Resources\Images\perimetertriangle.png" />
+	  <None Remove="Resources\Images\volumetriangle.png" />
 	</ItemGroup>
 
 	<ItemGroup>
