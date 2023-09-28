@@ -13,7 +13,7 @@ namespace ShapeCalculator.ViewModels
 {
     public partial class TriangleViewModel : INotifyPropertyChanged
     {
-        //Area
+        //Area of the Triangle
         private double _AreaTriangle = 0;
         public double AreaTriangle
         {
