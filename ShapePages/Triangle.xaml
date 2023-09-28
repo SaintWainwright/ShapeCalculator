@@ -131,7 +131,7 @@
                 <HorizontalStackLayout>
                     <Label Text="Radius" VerticalOptions="Center"/>
                     <Border Stroke="black" Margin="30,0,0,0">
-                        <Entry Text="{Binding VolumeTriangleHeight}"
+                        <Entry Text="{Binding VolumeTriangleRadius}"
                                WidthRequest="150"/>
                     </Border>
                 </HorizontalStackLayout>

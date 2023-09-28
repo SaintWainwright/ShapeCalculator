@@ -2,64 +2,145 @@
 using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace ShapeCalculator.ViewModels
 {
-    public partial class RectangleViewModel : ObservableObject
+    public partial class RectangleViewModel : INotifyPropertyChanged
     {
-        [ObservableProperty]
-        double _LengthRectangle;
-
-        [ObservableProperty]
-        double _WidthRectangle;
-
-        [ObservableProperty]
-        double _AreaRectangle;
-        [ObservableProperty]
-        double _PerimeterRectangle;
-
-        [RelayCommand]
-        void CalculateRectangle()
+        private double _LengthRectangle = 0;
+        public double LengthRectangle
+        {
+            get { return _LengthRectangle; }
+            set
+            {
+                _LengthRectangle = value;
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(_LengthRectangle));
+            }
+        }
+        private double _WidthRectangle = 0;
+        public double WidthRectangle
+        {
+            get { return _WidthRectangle; }
+            set
+            {
+                _WidthRectangle = value;
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(_WidthRectangle));
+            }
+        }
+        private double _AreaRectangle = 0;
+        public double AreaRectangle
+        {
+            get { return _AreaRectangle; }
+            set
+            {
+                _AreaRectangle = value;
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(_AreaRectangle));
+            }
+        }
+        private double _PerimeterRectangle = 0;
+        public double PerimeterRectangle
+        {
+            get { return _PerimeterRectangle; }
+            set
+            {
+                _PerimeterRectangle = value;
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(_PerimeterRectangle));
+            }
+        }
+        private void CalculateRectangle()
         {
             AreaRectangle = Math.Round((WidthRectangle * LengthRectangle), 2);
             PerimeterRectangle = Math.Round((2 * (WidthRectangle + LengthRectangle)), 2);
         }
-        [RelayCommand]
-        void ClearRectangle()
+        public ICommand CalculateRectangleCommand => new Command(CalculateRectangle);
+
+        //Clear Rectangle
+        private void ClearRectangle()
         {
             LengthRectangle = 0;
             WidthRectangle = 0;
             CalculateRectangle();
         }
+        public ICommand ClearRectangleCommand => new Command(ClearRectangle);
 
-        [ObservableProperty]
-        double _LengthRectangleTank;
+        //Rectangle Tank
+        private double _LengthRectangleTank = 0;
+        public double LengthRectangleTank
+        {
+            get { return _LengthRectangleTank; }
+            set
+            {
+                _LengthRectangleTank = value;
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(_LengthRectangleTank));
+            }
+        }
 
-        [ObservableProperty]
-        double _WidthRectangleTank;
+        private double _WidthRectangleTank = 0;
+        public double WidthRectangleTank
+        {
+            get { return _WidthRectangleTank; }
+            set
+            {
+                _WidthRectangleTank = value;
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(_WidthRectangleTank));
+            }
+        }
 
-        [ObservableProperty]
-        double _HeightRectangleTank;
+        private double _HeightRectangleTank = 0;
+        public double HeightRectangleTank
+        {
+            get { return _HeightRectangleTank; }
+            set
+            {
+                _HeightRectangleTank = value;
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(_HeightRectangleTank));
+            }
+        }
 
-        [ObservableProperty]
-        double _VolumeRectangleTank;
+        private double _VolumeRectangleTank = 0;
+        public double VolumeRectangleTank
+        {
+            get { return _VolumeRectangleTank; }
+            set
+            {
+                _VolumeRectangleTank = value;
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(_VolumeRectangleTank));
+            }
+        }
 
-        [RelayCommand]
-        void CalculateRectangleTank()
+        private void CalculateRectangleTank()
         {
             VolumeRectangleTank = Math.Round((LengthRectangleTank * WidthRectangleTank * HeightRectangleTank), 2);
         }
 
-        [RelayCommand]
-        void ClearRectangleTank()
+        public ICommand CalculateRectangleTankCommand => new Command(CalculateRectangleTank);
+        private void ClearRectangleTank()
         {
             LengthRectangleTank = 0;
             WidthRectangleTank = 0;
             HeightRectangleTank = 0;
             CalculateRectangleTank();
+        }
+        public ICommand ClearRectangleTankCommand => new Command(ClearRectangleTank);
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
