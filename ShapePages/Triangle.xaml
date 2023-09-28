@@ -7,50 +7,159 @@
     <Shell.BackButtonBehavior>
         <BackButtonBehavior IsVisible="False" IsEnabled="False" />
     </Shell.BackButtonBehavior>
-    <VerticalStackLayout>
-        <Label Text="Area"/>
+
+    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
         <HorizontalStackLayout>
-            <VerticalStackLayout>
+            <Border HeightRequest="100" WidthRequest="150" VerticalOptions="Center">
+                <Image Source="areatriangle.png" HorizontalOptions="Center" VerticalOptions="Center"/>
+            </Border>
+            <VerticalStackLayout VerticalOptions="Center" Margin="30,0,0,0">
+                <Label Text="Area"/>
                 <HorizontalStackLayout>
                     <Label Text="Edge 1"
                            VerticalOptions="Center"/>
                     <Border Stroke="Black" Margin="30,0,0,0">
-                        <Entry 
-                            Text="{Binding AreaTriangleBase}"
-                            WidthRequest="150"/>
+                        <Entry Text="{Binding AreaTriangleBase}"
+                               WidthRequest="150"/>
                     </Border>
                 </HorizontalStackLayout>
-                <HorizontalStackLayout>
+                <HorizontalStackLayout Margin="0,5,0,0">
                     <Label Text="Edge 2"
                            VerticalOptions="Center"/>
                     <Border Stroke="Black" Margin="30,0,0,0">
-                        <Entry 
-                            Text="{Binding AreaTriangleHeight}"
-                            WidthRequest="150"/>
+                        <Entry Text="{Binding AreaTriangleHeight}"
+                               WidthRequest="150"/>
                     </Border>
                 </HorizontalStackLayout>
             </VerticalStackLayout>
-            <VerticalStackLayout Margin="30,0,0,0">
-                <Border Margin="0,0,0,0">
-                    <Label Text="{Binding AreaTriangle}"
-                           HorizontalOptions="Center"/>
-                </Border>
+            <VerticalStackLayout Margin="30,0,0,0" VerticalOptions="Center">
+                <Label Text="Result" Margin="0,0,0,10"/>
+                <HorizontalStackLayout>
+                    <Border Stroke="Black">
+                        <Label Text="{Binding AreaTriangle}"
+                               WidthRequest="100"
+                               VerticalOptions="Center"
+                               Margin="30,0,0,0"/>
+                    </Border>
+                    <Picker SelectedIndex="1" MinimumHeightRequest="3">
+                        <Picker.Items>
+                            <x:String>in</x:String>
+                            <x:String>m</x:String>
+                            <x:String>cm</x:String>
+                            <x:String>km</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </HorizontalStackLayout>
                 <HorizontalStackLayout>
                     <Button Text="Calculate"
-                        Command="{Binding CalculateAreaTriangleCommand}"/>
+                            Command="{Binding CalculateAreaTriangleCommand}"
+                            BackgroundColor="Blue"/>
                     <Button Text="Clear"
                             Command="{Binding ClearTriangleAreaCommand}"/>
                 </HorizontalStackLayout>
             </VerticalStackLayout>
-            <VerticalStackLayout VerticalOptions="Center" Margin="30,0">
-                <Picker Title="Measurement">
-                    <Picker.Items>
-                        <x:String>In</x:String>
-                        <x:String>m</x:String>
-                        <x:String>cm</x:String>
-                        <x:String>km</x:String>
-                    </Picker.Items>
-                </Picker>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Border WidthRequest="150" HeightRequest="100" VerticalOptions="Center">
+                <Image Source="perimetertriangle.png" HorizontalOptions="Center"/>
+            </Border>
+            <VerticalStackLayout Margin="30,0,0,0">
+                <Label Text="Perimeter"/>
+                <HorizontalStackLayout>
+                    <Label Text="Side 1" Margin="0,0,4,0"
+                           VerticalOptions="Center"/>
+                    <Border Margin="30,0,0,0" Stroke="black ">
+                        <Entry Text="{Binding PerimeterTriangleSide1}"
+                               WidthRequest="150"/>
+                    </Border>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Margin="0,5,0,0">
+                    <Label Text="Side 2" Margin="0,0,4,0"
+                           VerticalOptions="Center"/>
+                    <Border Margin="30,0,0,0" Stroke="black ">
+                        <Entry Text="{Binding PerimeterTriangleBase}"
+                               WidthRequest="150"/>
+                    </Border>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Margin="0,5,0,0">
+                    <Label Text="Side 3" Margin="0,0,4,0"
+                           VerticalOptions="Center"/>
+                    <Border Margin="30,0,0,0" Stroke="black ">
+                        <Entry Text="{Binding PerimeterTriangleSide2}"
+                               WidthRequest="150"/>
+                    </Border>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+            <VerticalStackLayout Margin="30,0,0,0" VerticalOptions="Center">
+                <Label Text="Result" Margin="0,0,0,10"/>
+                <HorizontalStackLayout>
+                    <Border Stroke="Black">
+                        <Label Text="{Binding PerimeterTriangle}"
+                               WidthRequest="100"
+                               VerticalOptions="Center"
+                               Margin="30,0,0,0"/>
+                    </Border>
+                    <Picker SelectedIndex="1" MinimumHeightRequest="3">
+                        <Picker.Items>
+                            <x:String>in</x:String>
+                            <x:String>m</x:String>
+                            <x:String>cm</x:String>
+                            <x:String>km</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Button Text="Calculate"
+                            Command="{Binding CalculatePerimeterTriangleCommand}"
+                            BackgroundColor="Blue"/>
+                    <Button Text="Clear"
+                            Command="{Binding ClearPerimeterTriangleCommand}"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </HorizontalStackLayout>
+        <Label Text="Volume - Cone"/>
+        <HorizontalStackLayout>
+            <VerticalStackLayout>
+                <HorizontalStackLayout>
+                    <Label Text="Radius" VerticalOptions="Center"/>
+                    <Border Stroke="black" Margin="30,0,0,0">
+                        <Entry Text="{Binding VolumeTriangleHeight}"
+                               WidthRequest="150"/>
+                    </Border>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Margin="0,5,0,0">
+                    <Label Text="Height" VerticalOptions="Center" Margin="0,0,1,0"/>
+                    <Border Stroke="black" Margin="30,0,0,0">
+                        <Entry Text="{Binding VolumeTriangleHeight}"
+                               WidthRequest="150"/>
+                    </Border>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+            <VerticalStackLayout Margin="30,0,0,0" VerticalOptions="Center">
+                <Label Text="Result" Margin="0,0,0,10"/>
+                <HorizontalStackLayout>
+                    <Border Stroke="Black">
+                        <Label Text="{Binding VolumeTriangle}"
+                               WidthRequest="100"
+                               VerticalOptions="Center"
+                               Margin="30,0,0,0"/>
+                    </Border>
+                    <Picker SelectedIndex="1" MinimumHeightRequest="3">
+                        <Picker.Items>
+                            <x:String>in</x:String>
+                            <x:String>m</x:String>
+                            <x:String>cm</x:String>
+                            <x:String>km</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Button Text="Calculate"
+                            Command="{Binding CalculateVolumeTriangleCommand}"
+                            BackgroundColor="Blue"/>
+                    <Button Text="Clear"
+                            Command="{Binding ClearVolumeTriangleCommand}"/>
+                </HorizontalStackLayout>
             </VerticalStackLayout>
         </HorizontalStackLayout>
     </VerticalStackLayout>
