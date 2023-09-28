@@ -36,7 +36,7 @@
                 <Button Text="Clear" Command="{Binding ClearCircleCommand}" HeightRequest="10"/>
             </HorizontalStackLayout>
             <VerticalStackLayout Margin="0,60,0,0">
-                <Label Text="Result" FontAttributes="Bold"/>
+                <Label Text="Result" FontAttributes="Bold" Margin="0,0,0,5"/>
                 <HorizontalStackLayout>
                     <Label Text="Area" WidthRequest="100" VerticalOptions="Center"/>
                     <Border Stroke="black">
