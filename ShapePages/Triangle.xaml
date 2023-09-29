@@ -37,7 +37,7 @@
                 <Picker Title="Unit of Measurement" WidthRequest="140" ItemsSource="{Binding UnitsOfMeasurements}" SelectedItem="{Binding UnitMeasurementArea}"/>
             </VerticalStackLayout>
             <VerticalStackLayout Margin="30,0,0,0" VerticalOptions="Center">
-                <Label Text="Result" Margin="0,0,0,5"/>
+                <Label Text="Result" Margin="0,0,0,5" FontAttributes="Bold"/>
                 <Border Stroke="Black">
                     <Entry Text="{Binding AreaTriangle}"
                            VerticalOptions="Center"
@@ -87,7 +87,7 @@
                 <Picker Title="Unit of Measurement" WidthRequest="140" ItemsSource="{Binding UnitsOfMeasurements}" SelectedItem="{Binding UnitMeasurementPerimeter}"/>
             </VerticalStackLayout>
             <VerticalStackLayout Margin="30,0,0,0" VerticalOptions="Center">
-                <Label Text="Result" Margin="0,0,0,5"/>
+                <Label Text="Result" Margin="0,0,0,5" FontAttributes="Bold"/>
                 <Border Stroke="Black">
                     <Entry Text="{Binding PerimeterTriangle}"
                            VerticalOptions="Center"
@@ -127,7 +127,7 @@
                 <Picker Title="Unit of Measurement" WidthRequest="140" ItemsSource="{Binding UnitsOfMeasurements}" SelectedItem="{Binding UnitMeasurementVolume}"/>
             </VerticalStackLayout>
             <VerticalStackLayout Margin="30,0,0,0" VerticalOptions="Center">
-                <Label Text="Result" Margin="0,0,0,5"/>
+                <Label Text="Result" Margin="0,0,0,5" FontAttributes="Bold"/>
                 <Border Stroke="Black">
                     <Entry Text="{Binding VolumeTriangle}"
                            VerticalOptions="Center"

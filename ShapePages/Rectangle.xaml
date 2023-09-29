@@ -83,7 +83,7 @@
                     <VerticalStackLayout Margin="30,0,0,0">
                         <Label Text="Result" Margin="0,0,0,5" FontAttributes="Bold"/>
                         <Border Stroke="black">
-                            <Entry WidthRequest="150" Text="{Binding VolumeRectangleTank}"/>
+                            <Entry WidthRequest="150" Text="{Binding VolumeRectangleTank}" IsReadOnly="True"/>
                         </Border>
                         <HorizontalStackLayout>
                             <Button Text="Calculate" Command="{Binding CalculateRectangleTankCommand}" BackgroundColor="Blue" HeightRequest="10"/>
